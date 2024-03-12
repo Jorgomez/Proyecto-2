@@ -307,9 +307,13 @@ const fillTypes = (array) => {
 }
 fillTypes(products)
 //print and event
+const select = document.createElement('select')
 const createSelect = () => {
-  const select = document.createElement('select')
-  select.innerHTML = `<option value="" disabled selected>Filtra según tipo</option>`
+  const optionAll = document.createElement('option')
+
+  optionAll.textContent = 'Filtra según tipo'
+  optionAll.value = types
+  select.append(optionAll)
 
   for (const type of types) {
     const option = document.createElement('option')
@@ -320,7 +324,10 @@ const createSelect = () => {
   sectionfilter.append(select)
 
   select.addEventListener('change', (event) => {
-    ;(TYPE = event.target.value), filtrar()
+    ;(TYPE = event.target.value),
+      filtrar(),
+      (searchInput.value = ''),
+      (inputPrice.value = '')
   })
 }
 
@@ -361,7 +368,10 @@ const filtrarPrice = () => {
 }
 
 buttonPrice.addEventListener('click', () => {
-  ;(PRICE = inputPrice.value), filtrarPrice(), (inputPrice.value = '')
+  ;(PRICE = inputPrice.value),
+    filtrarPrice(),
+    (searchInput.value = ''),
+    (select.selectedIndex = 0)
 })
 
 // ------Word filter---------
@@ -388,7 +398,7 @@ divFiltroWord.append(searchInput, searchButton)
 sectionfilter.append(divFiltroWord)
 
 searchButton.addEventListener('click', () => {
-  filtrarWord(), (searchInput.value = '')
+  filtrarWord(), (inputPrice.value = ''), (select.selectedIndex = 0)
 })
 
 // ----------añadir a carrito---------
@@ -420,7 +430,13 @@ const cleanFilter = () => {
   cleanButton.textContent = 'Limpiar Filtros'
   sectionfilter.append(cleanButton)
 }
-cleanButton.addEventListener('click', () => printProduct(products))
+cleanButton.addEventListener('click', () => {
+  printProduct(products),
+    (searchInput.value = ''),
+    (inputPrice.value = ''),
+    (select.selectedIndex = 0)
+})
 cleanFilter()
 
 printProduct(products)
+
