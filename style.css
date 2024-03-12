@@ -221,7 +221,7 @@ max-height: 350px;
 }
 
 .producto:hover { width: 15%;
-transform: scale(1.2);
+transform: scale(1.07);
   }
 .producto>img {width: 100%; 
   
@@ -328,12 +328,6 @@ padding: 3px}
 
 
 
-
-
-
-
-
-
 /* 850 */
 @media (max-width: 850px) {
   .logotipo { width: 50%;
@@ -370,14 +364,15 @@ background-color: var(--color-01);
 }
 
 .divFiltroPrice {
-  gap: 1px;
+  gap: 5px;
+
 
   
   }
 
 .divFiltroWord {
-gap: 1px;
-
+gap: 5px;
+width: 30%;
 }
 .filter> select {padding: 0;
 font-size: small;
@@ -391,14 +386,14 @@ padding: 1.5%;;
 }
 
 .filter> div> button {color: var(--color-05);
-padding: 3%;
+padding: 6px;
  color: aliceblue;
  font-size: 11px;
  border: 1px solid;
 }
 
 .filter> button {color: var(--color-05);
-  padding: 4px;
+  padding: 6px;
   color: aliceblue;
   font-size: 11px;
   border: 1px solid;
@@ -424,27 +419,30 @@ padding: 3%;
   .filter{flex-direction: column;
     align-items: center;
     width: 50%;
-    gap: 5px;
-    padding: 1%;
+    gap: 9px;
+    padding: 2%;
   }
   .divFiltroWord {
     display: none;
     
     }
-
+    .divFiltroPrice {
+      gap: 6px;
+      
+      }
     .producto { width:10%;
-      min-width: 100px;
+      min-width: 130px;
     text-align: center;
     gap: 5px;
     padding: 1px;
     
     }
-    .producto > h3 {font-size: 10px;}
+    .producto > h3 {font-size: 12px;}
     
-    .producto > p { font-size: 10px;}
+    .producto > p { font-size: 12px;}
   
     .producto> button { color: var(--color-01);
-      font-size: 10px;
+      font-size: 12px;
       margin-bottom: var(--spacing-s);
     padding: 3px;
     }
